@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Calculator</string>
+
+    <string name="numberZero" translatable="false">0</string>
+    <string name="numberOne" translatable="false">1</string>
+    <string name="numberTwo" translatable="false">2</string>
+    <string name="numberThree" translatable="false">3</string>
+    <string name="numberFour" translatable="false">4</string>
+    <string name="numberFive" translatable="false">5</string>
+    <string name="numberSix" translatable="false">6</string>
+    <string name="numberSeven" translatable="false">7</string>
+    <string name="numberEight" translatable="false">8</string>
+    <string name="numberNine" translatable="false">9</string>
+    <string name="equal" translatable="false">=</string>
+    <string name="add" translatable="false">+</string>
+    <string name="subtract" translatable="false">-</string>
+    <string name="multiply" translatable="false">*</string>
+    <string name="divide" translatable="false">/</string>
+    <string name="point" translatable="false">.</string>
+    <string name="restart" translatable="false">AC</string>
 </resources>
