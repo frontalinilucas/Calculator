@@ -11,7 +11,9 @@ import com.lf.calculator.model.DivideOperation;
 import com.lf.calculator.model.MultiplyOperation;
 import com.lf.calculator.model.SubtractOperation;
 
-public class CalculatorPresenter extends BaseObservable {
+import java.io.Serializable;
+
+public class CalculatorPresenter extends BaseObservable implements Serializable {
 
     private Calculator mCalculator;
 

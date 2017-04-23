@@ -10,13 +10,23 @@ import com.lf.calculator.presenter.CalculatorPresenter;
 
 public class CalculatorActivity extends AppCompatActivity {
 
+    private static final String KEY_CALCULATOR = "KEY_CALCULATOR";
+
+    private CalculatorPresenter mCalculatorPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCalculatorBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_calculator);
-        CalculatorPresenter calculatorPresenter = new CalculatorPresenter();
-        binding.setCalculator(calculatorPresenter);
+        if(savedInstanceState != null && savedInstanceState.containsKey(KEY_CALCULATOR))
+            mCalculatorPresenter = (CalculatorPresenter) savedInstanceState.getSerializable(KEY_CALCULATOR);
+        else
+            mCalculatorPresenter = new CalculatorPresenter();
+        binding.setCalculator(mCalculatorPresenter);
 
     }
-    //TODO: Saveinstancestate??
+
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putSerializable(KEY_CALCULATOR, mCalculatorPresenter);
+    }
 }

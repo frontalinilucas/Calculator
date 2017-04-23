@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="calculator"
@@ -18,7 +19,10 @@
             android:text="@{calculator.result}"
             android:gravity="end|top"
             android:textSize="@dimen/textSizeResult"
-            android:padding="@dimen/defaultPadding"/>
+            android:padding="@dimen/defaultPadding"
+            android:background="@color/displayColor"
+            android:textColor="@android:color/white"
+            tools:text="0"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,11 +38,11 @@
                     android:layout_weight="3"
                     android:text="@string/restart"
                     android:onClick="@{() -> calculator.restart()}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/divide"
                     android:onClick="@{() -> calculator.divide()}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/operationCalculator"/>
             </LinearLayout>
 
             <LinearLayout
@@ -48,19 +52,19 @@
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/numberSeven"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/numberEight"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/numberNine"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/multiply"
                     android:onClick="@{() -> calculator.multiply()}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/operationCalculator"/>
             </LinearLayout>
 
             <LinearLayout
@@ -70,19 +74,19 @@
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/numberFour"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/numberFive"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/numberSix"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/subtract"
                     android:onClick="@{() -> calculator.subtract()}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/operationCalculator"/>
             </LinearLayout>
 
             <LinearLayout
@@ -92,19 +96,19 @@
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/numberOne"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/numberTwo"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/numberThree"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/add"
                     android:onClick="@{() -> calculator.add()}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/operationCalculator"/>
             </LinearLayout>
 
             <LinearLayout
@@ -115,15 +119,15 @@
                     android:layout_weight="2"
                     android:text="@string/numberZero"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/point"
                     android:onClick="@{(view) -> calculator.addNumber(view)}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/numberCalculator"/>
                 <android.support.v7.widget.AppCompatButton
                     android:text="@string/equal"
                     android:onClick="@{() -> calculator.equal()}"
-                    style="@style/numbersCalculator"/>
+                    style="@style/operationCalculator"/>
             </LinearLayout>
         </LinearLayout>
 

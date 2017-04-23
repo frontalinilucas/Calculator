@@ -1,6 +1,8 @@
 package com.lf.calculator.model;
 
-public interface Operation {
+import java.io.Serializable;
+
+public interface Operation extends Serializable {
 
     Double operation(Double number, Double number2);
 

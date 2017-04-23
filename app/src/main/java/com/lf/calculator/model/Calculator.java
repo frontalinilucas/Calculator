@@ -3,19 +3,19 @@ package com.lf.calculator.model;
 import com.lf.calculator.utils.Constants;
 import com.lf.calculator.utils.Utils;
 
-//Todo eliminar IF
-public class Calculator {
+import java.io.Serializable;
+
+public class Calculator implements Serializable{
 
     private Operation mOperation;
     private String mAccumulator;
     private String mAuxiliar;
     private String mDisplay;
 
-    //TODO: Ver flag
-    private Boolean mFlag;
+    private Boolean mFlagRestartDisplay;
 
     public Calculator(){
-        mFlag = false;
+        mFlagRestartDisplay = false;
         restartAccumulator();
         restartDisplay();
         restartAuxiliar();
@@ -43,18 +43,18 @@ public class Calculator {
     }
 
     public void concat(String number){
-        if(mFlag)
+        if(mFlagRestartDisplay)
             restartDisplay();
         String numberWithoutComma = Utils.replaceComma(mDisplay.concat(number));
         setDisplay(Utils.isNumber(numberWithoutComma)
                 ? numberWithoutComma
                 : mDisplay);
         mAuxiliar = mDisplay;
-        mFlag = false;
+        mFlagRestartDisplay = false;
     }
 
     public void setOperation(Operation operation) {
-        mFlag = true;
+        mFlagRestartDisplay = true;
         mAccumulator = mDisplay;
         mOperation = operation;
     }

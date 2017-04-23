@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="numberColor">#DEDEDE</color>
+    <color name="operationColor">#F59140</color>
+    <color name="borderColor">#8C8C8C</color>
+    <color name="displayColor">#292929</color>
 </resources>
