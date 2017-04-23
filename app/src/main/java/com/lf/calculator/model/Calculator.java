@@ -60,7 +60,6 @@ public class Calculator {
     }
 
     public void operation(){
-        //TODO: Division por 0
         setDisplay(String.valueOf(mOperation.operation(Double.parseDouble(mAccumulator), Double.parseDouble(mAuxiliar))));
         mAccumulator = mDisplay;
     }

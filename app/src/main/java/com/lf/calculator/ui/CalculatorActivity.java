@@ -17,7 +17,6 @@ public class CalculatorActivity extends AppCompatActivity {
         CalculatorPresenter calculatorPresenter = new CalculatorPresenter();
         binding.setCalculator(calculatorPresenter);
 
-
     }
     //TODO: Saveinstancestate??
 }
