@@ -1,4 +1,4 @@
-package com.lf.calculator.model;
+package com.lf.calculator.interfaces;
 
 import java.io.Serializable;
 

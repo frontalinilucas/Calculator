@@ -1,5 +1,6 @@
 package com.lf.calculator.model;
 
+import com.lf.calculator.interfaces.Operation;
 import com.lf.calculator.utils.Constants;
 import com.lf.calculator.utils.Utils;
 
