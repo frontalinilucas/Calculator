@@ -1,108 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.v7.widget.AppCompatTextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="calculator"
+            type="com.lf.calculator.presenter.CalculatorPresenter"/>
+    </data>
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:maxLength="15"
-        android:id="@+id/result"
-        android:layout_above="@+id/contentButtons"
-        android:text="@string/numberZero"
-        android:gravity="end|top"
-        android:textSize="@dimen/textSizeResult"
-        android:padding="@dimen/defaultPadding"/>
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/contentButtons"
-        android:layout_alignParentBottom="true">
-        <LinearLayout
+        <android.support.v7.widget.AppCompatTextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <android.support.v7.widget.AppCompatButton
-                android:layout_weight="3"
-                android:text="@string/restart"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/divide"
-                style="@style/numbersCalculator"/>
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:maxLength="15"
+            android:id="@+id/result"
+            android:layout_above="@+id/contentButtons"
+            android:text="@{calculator.result}"
+            android:gravity="end|top"
+            android:textSize="@dimen/textSizeResult"
+            android:padding="@dimen/defaultPadding"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/numberSeven"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/numberEight"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/numberNine"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/multiply"
-                style="@style/numbersCalculator"/>
+            android:orientation="vertical"
+            android:id="@+id/contentButtons"
+            android:layout_alignParentBottom="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_weight="3"
+                    android:text="@string/restart"
+                    android:onClick="@{() -> calculator.restart()}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/divide"
+                    android:onClick="@{() -> calculator.divide()}"
+                    style="@style/numbersCalculator"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/numberSeven"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/numberEight"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/numberNine"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/multiply"
+                    android:onClick="@{() -> calculator.multiply()}"
+                    style="@style/numbersCalculator"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/numberFour"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/numberFive"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/numberSix"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/subtract"
+                    android:onClick="@{() -> calculator.subtract()}"
+                    style="@style/numbersCalculator"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/numberOne"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/numberTwo"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/numberThree"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/add"
+                    android:onClick="@{() -> calculator.add()}"
+                    style="@style/numbersCalculator"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_weight="2"
+                    android:text="@string/numberZero"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/point"
+                    android:onClick="@{(view) -> calculator.addNumber(view)}"
+                    style="@style/numbersCalculator"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:text="@string/equal"
+                    android:onClick="@{() -> calculator.equal()}"
+                    style="@style/numbersCalculator"/>
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/numberFour"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/numberFive"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/numberSix"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/subtract"
-                style="@style/numbersCalculator"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/numberOne"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/numberTwo"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/numberThree"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/add"
-                style="@style/numbersCalculator"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <android.support.v7.widget.AppCompatButton
-                android:layout_weight="2"
-                android:text="@string/numberZero"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/point"
-                style="@style/numbersCalculator"/>
-            <android.support.v7.widget.AppCompatButton
-                android:text="@string/equal"
-                style="@style/numbersCalculator"/>
-        </LinearLayout>
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

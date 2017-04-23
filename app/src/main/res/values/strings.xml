@@ -16,6 +16,6 @@
     <string name="subtract" translatable="false">-</string>
     <string name="multiply" translatable="false">*</string>
     <string name="divide" translatable="false">/</string>
-    <string name="point" translatable="false">.</string>
+    <string name="point" translatable="false">,</string>
     <string name="restart" translatable="false">AC</string>
 </resources>
