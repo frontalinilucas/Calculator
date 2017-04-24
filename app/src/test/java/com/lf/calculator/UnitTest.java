@@ -5,10 +5,7 @@ import com.lf.calculator.model.AddOperation;
 import com.lf.calculator.model.DivideOperation;
 import com.lf.calculator.model.MultiplyOperation;
 import com.lf.calculator.model.SubtractOperation;
-
 import org.junit.Test;
-
-import java.util.Objects;
 
 import static org.junit.Assert.*;
 
